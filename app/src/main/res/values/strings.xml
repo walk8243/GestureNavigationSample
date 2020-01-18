@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Gesture Navigation Sample</string>
+    <string name="navigation_display_mode">ナビゲーション表示</string>
+    <string name="navigation_appreciation_mode">鑑賞モード</string>
+    <string name="navigation_immersion_mode">没入モード</string>
+    <string name="navigation_application_priority_mode">アプリ優先モード</string>
+    <string name="navigation_fullscreen_mode">全画面モード</string>
 </resources>
