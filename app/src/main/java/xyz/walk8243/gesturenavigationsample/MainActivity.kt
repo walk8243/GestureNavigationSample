@@ -70,7 +70,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun defaultMode() {
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_VISIBLE
+        window.decorView.systemUiVisibility = (
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    or View.SYSTEM_UI_FLAG_VISIBLE
+                )
     }
 
     private fun hiddenNavigation() {
