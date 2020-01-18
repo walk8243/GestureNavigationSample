@@ -1,9 +1,11 @@
 package xyz.walk8243.gesturenavigationsample
 
+import android.graphics.Rect
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
 import xyz.walk8243.gesturenavigationsample.component.NavigationChoicesGroup
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +17,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setupCheckBox()
+
+        ViewCompat.setOnApplyWindowInsetsListener(window.decorView) { view, insets ->
+            val windowInsets = view.rootWindowInsets.mandatorySystemGestureInsets
+            Log.d(LOGGING_TAG, "windowInsets => (" + windowInsets.left + ", " + windowInsets.top + ", " + windowInsets.right + ", " + windowInsets.bottom + ")")
+            view.onApplyWindowInsets(view.rootWindowInsets)
+            insets
+        }
     }
 
     private fun setupCheckBox() {
