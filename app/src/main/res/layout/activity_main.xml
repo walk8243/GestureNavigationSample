@@ -29,43 +29,43 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <RadioGroup
+        <xyz.walk8243.gesturenavigationsample.component.NavigationChoicesGroup
             android:id="@+id/radioButtonGroup_navigation"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <RadioButton
+            <xyz.walk8243.gesturenavigationsample.component.NavigationChoices
                 android:id="@+id/radioButton_navigation_displayMode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:checked="true"
                 android:text="@string/navigation_display_mode" />
 
-            <RadioButton
+            <xyz.walk8243.gesturenavigationsample.component.NavigationChoices
                 android:id="@+id/radioButton_navigation_fullscreenMode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/navigation_fullscreen_mode" />
 
-            <RadioButton
+            <xyz.walk8243.gesturenavigationsample.component.NavigationChoices
                 android:id="@+id/radioButton_navigation_appreciationMode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/navigation_appreciation_mode" />
 
-            <RadioButton
+            <xyz.walk8243.gesturenavigationsample.component.NavigationChoices
                 android:id="@+id/radioButton_navigation_immersionMode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/navigation_immersion_mode" />
 
-            <RadioButton
+            <xyz.walk8243.gesturenavigationsample.component.NavigationChoices
                 android:id="@+id/radioButton_navigation_applicationPriorityMode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/navigation_application_priority_mode" />
 
-        </RadioGroup>
+        </xyz.walk8243.gesturenavigationsample.component.NavigationChoicesGroup>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

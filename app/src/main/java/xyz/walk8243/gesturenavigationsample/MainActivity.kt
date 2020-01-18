@@ -3,9 +3,8 @@ package xyz.walk8243.gesturenavigationsample
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.RadioGroup
 import androidx.appcompat.app.AppCompatActivity
-
+import xyz.walk8243.gesturenavigationsample.component.NavigationChoicesGroup
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -15,18 +14,21 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setupCheckBox()
+    }
 
+    private fun setupCheckBox() {
         defaultMode()
 
-        val checkBox = findViewById<RadioGroup>(R.id.radioButtonGroup_navigation)
+        val checkBox = findViewById<NavigationChoicesGroup>(NavigationChoicesGroup.COMPONENT_ID)
         checkBox.setOnCheckedChangeListener {group, checkedId ->
             Log.d(LOGGING_TAG, "RadioButtonGroup(" + group.id.toString() + ") is checked " + checkedId.toString())
             when (checkedId) {
-                R.id.radioButton_navigation_displayMode -> defaultMode()
-                R.id.radioButton_navigation_fullscreenMode -> hiddenNavigation()
-                R.id.radioButton_navigation_appreciationMode -> setAppreciationMode()
-                R.id.radioButton_navigation_immersionMode -> setImmersionMode()
-                R.id.radioButton_navigation_applicationPriorityMode -> setApplicationPriorityMode()
+                checkBox.defaultModeChoice -> defaultMode()
+                checkBox.fullscreenModeChoice -> hiddenNavigation()
+                checkBox.appreciationModeChoice -> setAppreciationMode()
+                checkBox.immersionModeChoice -> setImmersionMode()
+                checkBox.applicationPriorityModeChoice -> setApplicationPriorityMode()
                 else -> throw IllegalArgumentException("不適切な選択がされました。")
             }
         }
